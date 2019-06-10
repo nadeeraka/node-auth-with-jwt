@@ -3,7 +3,9 @@ require("dotenv/config");
 
 const connection = async () => {
   try {
-    const connect = await mongoose.connect(process.env.LOCAL);
+    const connect = await mongoose.connect(process.env.LOCAL, {
+      useNewUrlParser: true
+    });
     if (connect) {
       console.log("connect !");
     }
