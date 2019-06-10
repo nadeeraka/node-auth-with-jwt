@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const volleyball = require("volleyball");
 const auth = require("./routes/auth");
+const db = require("./db");
 
 // volleyball logger
 app.use(volleyball);
@@ -22,7 +23,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(router);
 //auth routs
 app.use("/api", auth);
-
+//db
+db();
 //port
 
 const port = process.env.port || 7000;
