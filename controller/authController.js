@@ -61,8 +61,8 @@ exports.postSignup = async (req, res, next) => {
 
   const result = Joi.validate(req.body, schema);
   console.log(result.error);
-  const name = req.body.username;
-  const password = req.body.password;
+  const name = req.body.username.trim();
+  const password = req.body.password.trim();
 
   if (result.error !== null) {
     res.status(400).json({
