@@ -30,10 +30,7 @@ db();
 //error handel
 
 const errorHandel = (req, res, next) => {
-  res.status(res.statusCode || 500);
-  res.json({
-    status: "unexpected error occur"
-  });
+  console.error(res);
 };
 
 app.use(errorHandel);
