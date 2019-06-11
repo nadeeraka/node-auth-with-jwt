@@ -1,19 +1,24 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./App.css";
 import "bootswatch/dist/superhero/bootstrap.css";
 import Nav from "./components/Nav";
-import Hero from "./components/Hero";
+import Home from "./components/Home";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Nav />
       <div className="container">
-        <Hero />
-
-        <p>jjj</p>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/login" component={Login} />
+        </Switch>
       </div>
-    </div>
+    </Router>
   );
 }
 

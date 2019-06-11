@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <div>
@@ -18,12 +18,18 @@ export default function Hero() {
           out within the larger container.
         </p>
         <p className="lead">
-          <a className="btn btn-danger btn-lg mr-3" href="#" role="button">
-            Sign up
-          </a>
-          <a className="btn btn-success btn-lg ml-3 " href="#" role="button">
-            Sign in{" "}
-          </a>
+          <Link to="/signup">
+            <a className="btn btn-danger btn-lg mr-3" href="#" role="button">
+              Sign up
+            </a>
+          </Link>
+
+          <Link to="/login">
+            {" "}
+            <a className="btn btn-success btn-lg ml-3 " href="#" role="button">
+              Sign in{" "}
+            </a>
+          </Link>
         </p>
       </div>
     </div>
