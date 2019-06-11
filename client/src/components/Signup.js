@@ -1,16 +1,36 @@
 import React, { useState } from "react";
 import joi from "@hapi/joi";
+
 export default function Signup() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCPassword] = useState("");
   const [error, setError] = useState("");
 
-  const onFourm = e => {
+  const API_URL = "http://localhost:7000/api/signup";
+
+  const onFourm = async e => {
     e.preventDefault();
     const val = validate();
+    const body = {
+      username: name,
+      password
+    };
     if (val) {
-      console.log("god to go");
+      const req = await fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "content-type": "application/json"
+        }
+      });
+      const res = await req;
+
+      if (res) {
+        console.log(res);
+      } else {
+        console.log(res);
+      }
     }
   };
 

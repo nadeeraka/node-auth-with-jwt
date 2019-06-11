@@ -7,9 +7,12 @@ const volleyball = require("volleyball");
 const auth = require("./routes/auth");
 const db = require("./db");
 const notFound = require("./routes/404");
-
+const cors = require("cors");
+require("dotenv/config");
 // volleyball logger
 app.use(volleyball);
+// cors
+app.use(cors({ origin: process.env.ORIGN }));
 //body-parser
 app.use(bodyParser.json());
 

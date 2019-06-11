@@ -75,7 +75,7 @@ exports.postSignup = async (req, res, next) => {
     if (hashPassword) {
       const result = await findUser(name);
       if (result) {
-        const newUser = saveUser(name, hashPassword);
+        const newUser = await saveUser(name, hashPassword);
         if (newUser) {
           console.log(newUser);
           return res.status(200).json({
