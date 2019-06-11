@@ -7,6 +7,7 @@ export default function Signup() {
   const [password, setPassword] = useState("");
   const [cpassword, setCPassword] = useState("");
   const [error, setError] = useState("");
+  const [Action, setAction] = useState("");
 
   const API_URL = "http://localhost:7000/api/signup";
 
