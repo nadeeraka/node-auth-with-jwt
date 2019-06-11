@@ -52,7 +52,7 @@ const schema = Joi.object().keys({
   password: Joi.string()
     .trim()
     .empty()
-    .regex(/^[a-zA-Z0-9]{3,30}$/)
+    .regex(/^[a-zA-Z0-9]{10,30}$/)
     .required()
 });
 
