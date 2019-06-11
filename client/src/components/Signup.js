@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import joi from "@hapi/joi";
+import Logo from "./Logo";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -26,10 +27,11 @@ export default function Signup() {
       });
       const res = await req;
 
-      if (res) {
+      if (res.ok === true) {
         console.log(res);
       } else {
         console.log(res);
+        setError("check your name and password 🚫 ");
       }
     }
   };
@@ -95,6 +97,7 @@ export default function Signup() {
           <p>{error ? error : null}</p>
         </div>
       )}
+      <Logo />
       <form onSubmit={onFourm}>
         <div Name="form-group pt-4">
           <label for="exampleInputEmail1">User name</label>
